@@ -1,5 +1,5 @@
 # streamdeck-timerandclock
-A C# Stopwatch implementation for the Elgato Stream Deck device.
+A C# Stopwatch and Clock implementation for the Elgato Stream Deck device.
 
 ## Dependencies
 This library uses the [streamdeck-client-csharp](https://github.com/TyrenDe/streamdeck-client-csharp) wrapper
