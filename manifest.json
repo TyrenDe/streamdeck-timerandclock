@@ -1,0 +1,46 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/timerIcon",
+      "Name": "Timer",
+      "States": [
+        {
+          "Image": "Images/timer",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Digital Timer - Press to start and stop. Hold for 1 second to reset.",
+      "UUID": "com.tyren.timerandclock.timer"
+    },
+    {
+      "Icon": "Images/clockIcon",
+      "Name": "Digital Clock",
+      "States": [
+        {
+          "Image": "Images/clock",
+          "TitleAlignment": "middle",
+          "FontSize": "9"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "A digital clock with various date/time formats",
+      "UUID": "com.tyren.timerandclock.clock",
+      "PropertyInspectorPath": "PropertyInspector/Clock/Index.html"
+    }
+  ],
+  "Author": "Shane DeSeranno",
+  "Description": "A Timer and Clock plugin",
+  "Name": "Timer and Clock",
+  "Icon": "Images/pluginIcon",
+  "URL": "https://github.com/TyrenDe/streamdeck-timerandclock",
+  "Version": "0.1",
+  "CodePath": "TimerAndClock.exe",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ]
+}

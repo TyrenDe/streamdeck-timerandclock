@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>Timer And Clock - Clock</title>
+    <link rel="stylesheet" href="../sdpi.css">
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Date Format</div>
+            <select class="sdpi-item-value select" id="dateFormat" oninput="updateSettings()">
+                <option value="">None</option>
+                <option value="yyyy-dd-MM">yyyy-dd-MM</option>
+                <option value="yy-dd-MM">yy-dd-MM</option>
+                <option value="dd-MM-yyyy">dd-MM-yyyy</option>
+                <option value="dd-MM-yy">dd-MM-yy</option>
+                <option value="dd-MM">dd-MM</option>
+                <option value="MM-dd-yyyy">MM-dd-yyyy</option>
+                <option value="MM-dd-yy">MM-dd-yy</option>
+                <option value="MM-dd">MM-dd</option>
+            </select>
+        </div>
+
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Time Format</div>
+            <select class="sdpi-item-value select" id="timeFormat" oninput="updateSettings()">
+                <option value="">None</option>
+                <option value="hh:mm tt">hh:mm tt</option>
+                <option value="HH:mm:ss">HH:mm:ss</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="Index.js"></script>
+</body>
+</html>
