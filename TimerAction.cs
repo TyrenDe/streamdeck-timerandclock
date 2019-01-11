@@ -16,6 +16,7 @@ namespace TimerAndClock
         private StreamDeckConnection m_Connection;
         private string m_Context;
         private DateTimeOffset? m_ResetTime;
+        private bool m_WasReset = false;
         private Stopwatch m_Stopwatch = new Stopwatch();
 
         public override Task KeyDownAsync()
@@ -28,15 +29,11 @@ namespace TimerAndClock
         {
             return Task.Run(() =>
             {
-                if (m_ResetTime.HasValue)
+                m_ResetTime = null;
+                if (m_WasReset)
                 {
-                    if (m_ResetTime.Value < DateTimeOffset.UtcNow)
-                    {
-                        // Reset!
-                        m_ResetTime = null;
-                        m_Stopwatch.Reset();
-                        return;
-                    }
+                    m_WasReset = false;
+                    return;
                 }
 
                 // Otherwise, toggle running state
@@ -65,9 +62,19 @@ namespace TimerAndClock
 
         public override async Task RunTickAsync()
         {
+            if (m_ResetTime.HasValue)
+            {
+                if (m_ResetTime.Value < DateTimeOffset.UtcNow)
+                {
+                    // Reset!
+                    m_WasReset = true;
+                    m_ResetTime = null;
+                    m_Stopwatch.Reset();
+                }
+            }
+
             TimeSpan elapsed = m_Stopwatch.Elapsed;
-            // TODO: Apply formatting
-            await m_Connection.SetTitleAsync(m_Stopwatch.Elapsed.ToString(), m_Context, SDKTarget.HardwareAndSoftware);
+            await m_Connection.SetTitleAsync(m_Stopwatch.Elapsed.ToString(@"hh\:mm\:ss"), m_Context, SDKTarget.HardwareAndSoftware);
         }
 
         public override Task SaveAsync()
