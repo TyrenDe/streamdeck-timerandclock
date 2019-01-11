@@ -5,7 +5,7 @@ A C# Stopwatch and Clock implementation for the Elgato Stream Deck device.
 This library uses the [streamdeck-client-csharp](https://github.com/TyrenDe/streamdeck-client-csharp) wrapper
 
 ## Current functionality
-- New: Long press (1 seconds) on the key to reset the stopwatch
+- Long press (1 second) on the key to reset the stopwatch
 - Multiple Stopwatches suppport
 - Stopping/Starting a timer
 - Clock with multiple date and time formats
